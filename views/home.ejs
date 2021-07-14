@@ -1,0 +1,11 @@
+<%- include('partials/header'); -%>
+<h1>Home</h1>
+<p><%= textoInicial %></p>
+<% for (post in publicacoes) { %>
+    <% texto = publicacoes[post].texto %>
+    <% texto = texto.substring(0,100) + " ... "%>
+    <h1><%=publicacoes[post].titulo%></h1>
+    <p><%=texto%><a href="/post/<%=publicacoes[post].titulo%>">Leia mais!</a></p>
+<% } %>
+<%- include('partials/footer'); -%>
+
